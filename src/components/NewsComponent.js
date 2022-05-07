@@ -14,6 +14,7 @@ export default function NewsComponent() {
   const allNewsCards = newsData.articles.map((newsData) => {
     return (
       <NewsItem
+        key={newsData.url}
         title={newsData.title}
         imgUrl={newsData.urlToImage}
         readMoreLink={newsData.url}
@@ -34,9 +35,40 @@ export default function NewsComponent() {
         setNewsData({ articles: data.articles, loading: false });
       });
   }, [category]);
+
+  const categoryBusiness = () => {
+    setCategory('business');
+  };
+  const categoryEntertainment = () => {
+    setCategory('entertainment');
+  };
+  const categoryGeneral = () => {
+    setCategory('general');
+  };
+  const categoryHealth = () => {
+    setCategory('health');
+  };
+  const categoryScience = () => {
+    setCategory('science');
+  };
+  const categorySports = () => {
+    setCategory('sports');
+  };
+  const categoryTechnology = () => {
+    setCategory('technology');
+  };
+
   return (
     <>
-      <CategorySelector />
+      <CategorySelector
+        categoryBusiness={categoryBusiness}
+        categoryEntertainment={categoryEntertainment}
+        categoryGeneral={categoryGeneral}
+        categoryHealth={categoryHealth}
+        categoryScience={categoryScience}
+        categorySports={categorySports}
+        categoryTechnology={categoryTechnology}
+      />
       {newsData.loading && <Spinner />}
       {!newsData.loading && (
         <div className='news--container--outer'>
