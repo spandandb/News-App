@@ -1,9 +1,14 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import NewsItem from './NewsItem';
-import sampleOutputData from '../sampleOutputData.json';
+// import sampleOutputData from '../sampleOutputData.json';
+import Spinner from './Spinner';
 
 export default function NewsComponent() {
-  const allNewsCards = sampleOutputData.articles.map((newsData) => {
+  const [newsData, setNewsData] = useState({
+    articles: [],
+    loading: false
+  });
+  const allNewsCards = newsData.articles.map((newsData) => {
     return (
       <NewsItem
         title={newsData.title}
@@ -14,9 +19,26 @@ export default function NewsComponent() {
       />
     );
   });
+  useEffect(() => {
+    setNewsData((prevState) => {
+      return { ...prevState, loading: true };
+    });
+    const apiKey = `cc330dcb2b5f48749802617176b91c4d`;
+    const url = `https://newsapi.org/v2/top-headlines?country=in&apiKey=${apiKey}`;
+    fetch(url)
+      .then((res) => res.json())
+      .then((data) => {
+        setNewsData({ articles: data.articles, loading: false });
+      });
+  }, []);
   return (
-    <div className='news--container--outer'>
-      <div className='news--container'>{allNewsCards}</div>
-    </div>
+    <>
+      {newsData.loading && <Spinner />}
+      {!newsData.loading && (
+        <div className='news--container--outer'>
+          <div className='news--container'>{allNewsCards}</div>
+        </div>
+      )}
+    </>
   );
 }
