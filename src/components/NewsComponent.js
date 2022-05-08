@@ -34,6 +34,9 @@ export default function NewsComponent() {
       .then((data) => {
         setNewsData({ articles: data.articles, loading: false });
       });
+    document.title = `Pocket News - ${
+      category[0].toUpperCase() + category.slice(1)
+    }`;
   }, [category]);
 
   const categoryBusiness = () => {
