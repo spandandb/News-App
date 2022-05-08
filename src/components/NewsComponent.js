@@ -43,6 +43,9 @@ export default function NewsComponent() {
 
   const showAlert = () => {
     setAlert(true);
+    setTimeout(() => {
+      setAlert(false);
+    }, 5000);
   };
 
   const categoryBusiness = () => {
@@ -87,10 +90,18 @@ export default function NewsComponent() {
         categorySports={categorySports}
         categoryTechnology={categoryTechnology}
       />
+      <h4 style={{ color: 'white' }}>
+        Top Headlines{'  '}
+        <span className='badge bg-danger'>
+          {category[0].toUpperCase() + category.slice(1)}
+        </span>
+      </h4>
       {newsData.loading && <Spinner />}
       {!newsData.loading && (
-        <div className='news--container--outer'>
-          <div className='news--container'>{allNewsCards}</div>
+        <div>
+          <div className='news--container--outer'>
+            <div className='news--container'>{allNewsCards}</div>
+          </div>
         </div>
       )}
     </>

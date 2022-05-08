@@ -35,7 +35,7 @@ code {
     margin: 1rem;
     padding: 3rem;
     gap: 2rem;
-    border: 1px solid red
+    border: 1px solid red;
   }
 }
 
@@ -47,7 +47,7 @@ code {
     margin: 0.5rem;
     padding: 2rem;
     gap: 1rem;
-    border: 1px solid red
+    border: 1px solid red;
   }
 }
 
@@ -63,6 +63,7 @@ img{
 
 .news--container--outer{
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
@@ -79,4 +80,8 @@ h1{
 
 .news--items--card{
   overflow:hidden;
+}
+
+h4{
+  margin-top: 2rem;
 }
