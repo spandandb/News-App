@@ -26,11 +26,11 @@ export default function NewsComponent(props) {
     );
   });
   useEffect(() => {
-    props.setProgress(30);
+    props.setProgress(30); // eslint-disable-next-line
     setNewsData((prevState) => {
       return { ...prevState, loading: true };
     });
-    props.setProgress(50);
+    props.setProgress(70); // eslint-disable-next-line
     const apiKey = `cc330dcb2b5f48749802617176b91c4d`;
     const url = `https://newsapi.org/v2/top-headlines?country=in&category=${category}&apiKey=${apiKey}`;
     fetch(url)
@@ -38,48 +38,40 @@ export default function NewsComponent(props) {
       .then((data) => {
         setNewsData({ articles: data.articles, loading: false });
       });
-    props.setProgress(95);
     document.title = `Pocket News - ${
       category[0].toUpperCase() + category.slice(1)
     }`;
-    props.setProgress(100);
+    showAlert();
+    props.setProgress(100); // eslint-disable-next-line
   }, [category]);
 
-  const showAlert = () => {
+  function showAlert() {
     setAlert(true);
     setTimeout(() => {
       setAlert(false);
     }, 5000);
-    props.setProgress(30);
-  };
+  }
 
   const categoryBusiness = () => {
     setCategory('business');
-    showAlert();
   };
   const categoryEntertainment = () => {
     setCategory('entertainment');
-    showAlert();
   };
   const categoryGeneral = () => {
     setCategory('general');
-    showAlert();
   };
   const categoryHealth = () => {
     setCategory('health');
-    showAlert();
   };
   const categoryScience = () => {
     setCategory('science');
-    showAlert();
   };
   const categorySports = () => {
     setCategory('sports');
-    showAlert();
   };
   const categoryTechnology = () => {
     setCategory('technology');
-    showAlert();
   };
 
   return (

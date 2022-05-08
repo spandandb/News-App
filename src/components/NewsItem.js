@@ -8,23 +8,25 @@ export default function NewsItem(props) {
           src={
             props.imgUrl
               ? props.imgUrl
-              : 'https://images.news18.com/ibnlive/uploads/2022/01/untitled-3-60-164207932916x9.jpg'
+              : 'https://scx2.b-cdn.net/gfx/news/hires/2019/earth.jpg'
           }
           className='card-img-top'
-          alt='...'
+          alt='Currenty Unavailable'
         />
         <div className='card-body'>
           <h5 className='card-title'>
-            {props.title.length > 60
-              ? props.title.slice(0, 60) + '...'
-              : props.title}
+            {props.title
+              ? props.title.length > 60
+                ? props.title.slice(0, 60) + '...'
+                : props.title
+              : ''}
           </h5>
           <p className='card-text card--description'>
             {props.description
               ? props.description.length > 50
                 ? props.description.slice(0, 50) + '...'
                 : props.description
-              : 'n/a'}
+              : ''}
           </p>
           <hr />
           <a href={props.readMoreLink} className='btn btn-danger read--more'>
