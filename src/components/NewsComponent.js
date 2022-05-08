@@ -41,33 +41,37 @@ export default function NewsComponent() {
     }`;
   }, [category]);
 
+  const showAlert = () => {
+    setAlert(true);
+  };
+
   const categoryBusiness = () => {
     setCategory('business');
-    setAlert(true);
+    showAlert();
   };
   const categoryEntertainment = () => {
     setCategory('entertainment');
-    setAlert(true);
+    showAlert();
   };
   const categoryGeneral = () => {
     setCategory('general');
-    setAlert(true);
+    showAlert();
   };
   const categoryHealth = () => {
     setCategory('health');
-    setAlert(true);
+    showAlert();
   };
   const categoryScience = () => {
     setCategory('science');
-    setAlert(true);
+    showAlert();
   };
   const categorySports = () => {
     setCategory('sports');
-    setAlert(true);
+    showAlert();
   };
   const categoryTechnology = () => {
     setCategory('technology');
-    setAlert(true);
+    showAlert();
   };
 
   return (
