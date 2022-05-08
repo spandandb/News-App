@@ -3,6 +3,7 @@ import NewsItem from './NewsItem';
 // import sampleOutputData from '../sampleOutputData.json';
 import Spinner from './Spinner';
 import CategorySelector from './CategorySelector';
+import CategoryChangedAlert from './CategoryChangedAlert';
 
 export default function NewsComponent() {
   const [newsData, setNewsData] = useState({
@@ -10,6 +11,7 @@ export default function NewsComponent() {
     loading: false
   });
   const [category, setCategory] = useState('general');
+  const [alert, setAlert] = useState(false);
 
   const allNewsCards = newsData.articles.map((newsData) => {
     return (
@@ -41,28 +43,37 @@ export default function NewsComponent() {
 
   const categoryBusiness = () => {
     setCategory('business');
+    setAlert(true);
   };
   const categoryEntertainment = () => {
     setCategory('entertainment');
+    setAlert(true);
   };
   const categoryGeneral = () => {
     setCategory('general');
+    setAlert(true);
   };
   const categoryHealth = () => {
     setCategory('health');
+    setAlert(true);
   };
   const categoryScience = () => {
     setCategory('science');
+    setAlert(true);
   };
   const categorySports = () => {
     setCategory('sports');
+    setAlert(true);
   };
   const categoryTechnology = () => {
     setCategory('technology');
+    setAlert(true);
   };
 
   return (
     <>
+      {alert && <CategoryChangedAlert currentCategory={category} />}
+      <h1>Breaking Today</h1>
       <CategorySelector
         categoryBusiness={categoryBusiness}
         categoryEntertainment={categoryEntertainment}
