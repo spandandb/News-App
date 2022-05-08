@@ -5,7 +5,7 @@ import Spinner from './Spinner';
 import CategorySelector from './CategorySelector';
 import CategoryChangedAlert from './CategoryChangedAlert';
 
-export default function NewsComponent() {
+export default function NewsComponent(props) {
   const [newsData, setNewsData] = useState({
     articles: [],
     loading: false
@@ -26,9 +26,11 @@ export default function NewsComponent() {
     );
   });
   useEffect(() => {
+    props.setProgress(30);
     setNewsData((prevState) => {
       return { ...prevState, loading: true };
     });
+    props.setProgress(50);
     const apiKey = `cc330dcb2b5f48749802617176b91c4d`;
     const url = `https://newsapi.org/v2/top-headlines?country=in&category=${category}&apiKey=${apiKey}`;
     fetch(url)
@@ -36,9 +38,11 @@ export default function NewsComponent() {
       .then((data) => {
         setNewsData({ articles: data.articles, loading: false });
       });
+    props.setProgress(95);
     document.title = `Pocket News - ${
       category[0].toUpperCase() + category.slice(1)
     }`;
+    props.setProgress(100);
   }, [category]);
 
   const showAlert = () => {
@@ -46,6 +50,7 @@ export default function NewsComponent() {
     setTimeout(() => {
       setAlert(false);
     }, 5000);
+    props.setProgress(30);
   };
 
   const categoryBusiness = () => {
