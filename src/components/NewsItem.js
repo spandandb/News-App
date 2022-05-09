@@ -29,7 +29,11 @@ export default function NewsItem(props) {
               : ''}
           </p>
           <hr />
-          <a href={props.readMoreLink} className='btn btn-danger read--more'>
+          <a
+            href={props.readMoreLink}
+            className='btn btn-danger read--more'
+            target='_blank'
+          >
             Read More
           </a>
           <hr />

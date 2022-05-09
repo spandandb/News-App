@@ -3,6 +3,7 @@ import NewsComponent from './components/NewsComponent';
 import React, { useState } from 'react';
 import LoadingBar from 'react-top-loading-bar';
 import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 
 function App() {
   const [progress, setProgress] = useState(10);
@@ -16,6 +17,7 @@ function App() {
       />
       <Navbar />
       <NewsComponent setProgress={setProgress} />
+      <Footer />
     </div>
   );
 }
