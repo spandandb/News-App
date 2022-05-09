@@ -48,7 +48,9 @@ export default function NewsComponent(props) {
     if (!firstLoad) {
       showAlert();
     }
-    props.setProgress(100); // eslint-disable-next-line
+    setTimeout(() => {
+      props.setProgress(100); // eslint-disable-next-line
+    }, 600);
     setFirstLoad(false); // eslint-disable-next-line
   }, [category]);
 
