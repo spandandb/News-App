@@ -1,8 +1,8 @@
 import './App.css';
-import Navbar from './components/Navbar';
 import NewsComponent from './components/NewsComponent';
 import React, { useState } from 'react';
 import LoadingBar from 'react-top-loading-bar';
+import Navbar from './components/Navbar';
 
 function App() {
   const [progress, setProgress] = useState(10);

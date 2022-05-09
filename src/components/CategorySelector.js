@@ -2,9 +2,9 @@ import React from 'react';
 
 export default function CategorySelector(props) {
   return (
-    <div className='category--selecter m-5'>
-      <div className='btn-group'>
-        <button type='button' className='btn btn-danger btn-lg'>
+    <div className='category--selecter m-50'>
+      <div className='btn-group category--selecter--btn'>
+        <button type='button' className='btn btn-danger'>
           Select Category
         </button>
         <button

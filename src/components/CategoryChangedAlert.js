@@ -3,7 +3,7 @@ import React from 'react';
 export default function CategoryChangedAlert(props) {
   return (
     <div>
-      <div className='alert alert-info fade show' role='alert'>
+      <div className='alert alert-info fade show alert-msg' role='alert'>
         Your category has been successfully changed to{' '}
         <strong>
           {props.currentCategory === 'breaking-news'

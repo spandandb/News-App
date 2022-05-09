@@ -33,15 +33,16 @@ export default function NewsComponent(props) {
     });
     props.setProgress(70); // eslint-disable-next-line
     // const apiKey = `cc330dcb2b5f48749802617176b91c4d`;
-    const apiKey = `8f6d126a4492e78d5ed3356f04920cc4`;
+    // const apiKey = `8f6d126a4492e78d5ed3356f04920cc4`;
+    const apiKey2 = `205eb42c6749973fff8c8576be14765a`;
     // const url = `https://newsapi.org/v2/top-headlines?country=in&category=${category}&apiKey=${apiKey}`;
-    const url = `https://gnews.io/api/v4/top-headlines?country=in&topic=${category}&lang=en&token=${apiKey}`;
+    const url = `https://gnews.io/api/v4/top-headlines?country=in&topic=${category}&lang=en&token=${apiKey2}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => {
         setNewsData({ articles: data.articles, loading: false });
       });
-    document.title = `Pocket News - ${
+    document.title = `NewsLand - ${
       category[0].toUpperCase() + category.slice(1)
     }`;
     props.setProgress(90); // eslint-disable-next-line
@@ -85,12 +86,6 @@ export default function NewsComponent(props) {
 
   return (
     <>
-      {alert && (
-        <CategoryChangedAlert
-          currentCategory={category === 'breaking-news' ? 'general' : category}
-        />
-      )}
-      <h1>Breaking Today</h1>
       <CategorySelector
         categoryBusiness={categoryBusiness}
         categoryEntertainment={categoryEntertainment}
@@ -100,6 +95,11 @@ export default function NewsComponent(props) {
         categorySports={categorySports}
         categoryTechnology={categoryTechnology}
       />
+      {alert && (
+        <CategoryChangedAlert
+          currentCategory={category === 'breaking-news' ? 'general' : category}
+        />
+      )}
       <h4 style={{ color: 'white' }}>
         Top Headlines{'  '}
         <span className='badge bg-danger'>
