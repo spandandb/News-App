@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function Navbar() {
   return (
-    <div className='fixed-top  navigator'>
+    <div className='fixed-top navigator'>
       <nav
         className='navbar navbar-expand-lg navbar-dark bg-dark'
         style={{ backgroundColor: '#1c2331' }}

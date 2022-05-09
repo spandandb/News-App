@@ -42,13 +42,13 @@ export default function NewsItem(props) {
             Source :{' '}
             <span style={{ color: 'red', fontWeight: '500px' }}>
               {props.author ? props.author : 'Unknown'}
-            </span>{' '}
+            </span>
           </p>
           <p>
             Published on :{' '}
             <span style={{ color: 'red', fontWeight: '500px' }}>
               {props.publishedOn ? props.publishedOn.slice(0, 10) : 'Unknown'}
-            </span>{' '}
+            </span>
           </p>
         </div>
       </div>

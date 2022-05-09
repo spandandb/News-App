@@ -27,6 +27,8 @@ export default function NewsComponent(props) {
       />
     );
   });
+
+  //changed the api as the former news api did not allow to publish the app
   useEffect(() => {
     props.setProgress(30); // eslint-disable-next-line
     setNewsData((prevState) => {
@@ -34,10 +36,9 @@ export default function NewsComponent(props) {
     });
     props.setProgress(70); // eslint-disable-next-line
     // const apiKey = `cc330dcb2b5f48749802617176b91c4d`;
-    // const apiKey = `8f6d126a4492e78d5ed3356f04920cc4`;
-    const apiKey2 = `205eb42c6749973fff8c8576be14765a`;
+    const apiKey = `205eb42c6749973fff8c8576be14765a`;
     // const url = `https://newsapi.org/v2/top-headlines?country=in&category=${category}&apiKey=${apiKey}`;
-    const url = `https://gnews.io/api/v4/top-headlines?country=in&topic=${category}&lang=en&token=${apiKey2}`;
+    const url = `https://gnews.io/api/v4/top-headlines?country=in&topic=${category}&lang=en&token=${apiKey}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => {
