@@ -23,6 +23,7 @@ export default function NewsComponent(props) {
         readMoreLink={newsData.url}
         description={newsData.description}
         author={newsData.source.name}
+        publishedOn={newsData.publishedAt}
       />
     );
   });

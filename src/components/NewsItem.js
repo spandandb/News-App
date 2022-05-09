@@ -44,6 +44,12 @@ export default function NewsItem(props) {
               {props.author ? props.author : 'Unknown'}
             </span>{' '}
           </p>
+          <p>
+            Published on :{' '}
+            <span style={{ color: 'red', fontWeight: '500px' }}>
+              {props.publishedOn ? props.publishedOn.slice(0, 10) : 'Unknown'}
+            </span>{' '}
+          </p>
         </div>
       </div>
     </div>
