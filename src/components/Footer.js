@@ -54,6 +54,8 @@ export default function Footer() {
                     href='https://gnews.io/'
                     className='text-white'
                     style={{ textDecoration: 'none' }}
+                    target='_blank'
+                    rel='noreferrer'
                   >
                     GNews API
                   </a>
@@ -63,6 +65,8 @@ export default function Footer() {
                     href='https://reactjs.org/'
                     className='text-white'
                     style={{ textDecoration: 'none' }}
+                    target='_blank'
+                    rel='noreferrer'
                   >
                     React JS Team
                   </a>
@@ -72,6 +76,8 @@ export default function Footer() {
                     href='https://getbootstrap.com/'
                     className='text-white'
                     style={{ textDecoration: 'none' }}
+                    target='_blank'
+                    rel='noreferrer'
                   >
                     Bootstrap
                   </a>
@@ -96,6 +102,7 @@ export default function Footer() {
                     className='text-white'
                     style={{ textDecoration: 'none' }}
                     target='_blank'
+                    rel='noreferrer'
                   >
                     Facebook
                   </a>
@@ -106,6 +113,7 @@ export default function Footer() {
                     className='text-white'
                     style={{ textDecoration: 'none' }}
                     target='_blank'
+                    rel='noreferrer'
                   >
                     Github
                   </a>
@@ -116,6 +124,7 @@ export default function Footer() {
                     className='text-white'
                     style={{ textDecoration: 'none' }}
                     target='_blank'
+                    rel='noreferrer'
                   >
                     Instagram
                   </a>
@@ -126,13 +135,13 @@ export default function Footer() {
                     className='text-white'
                     style={{ textDecoration: 'none' }}
                     target='_blank'
+                    rel='noreferrer'
                   >
                     LinkedIn
                   </a>
                 </p>
               </div>
               <div className='col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4'>
-                target='_blank'
                 <h6 className='text-uppercase fw-bold'>Contact</h6>
                 <hr
                   className='mb-4 mt-0 d-inline-block mx-auto'

@@ -33,6 +33,7 @@ export default function NewsItem(props) {
             href={props.readMoreLink}
             className='btn btn-danger read--more'
             target='_blank'
+            rel='noreferrer'
           >
             Read More
           </a>
