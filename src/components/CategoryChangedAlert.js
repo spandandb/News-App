@@ -6,8 +6,10 @@ export default function CategoryChangedAlert(props) {
       <div className='alert alert-info fade show' role='alert'>
         Your category has been successfully changed to{' '}
         <strong>
-          {props.currentCategory[0].toUpperCase() +
-            props.currentCategory.slice(1)}
+          {props.currentCategory === 'breaking-news'
+            ? 'General'
+            : props.currentCategory[0].toUpperCase() +
+              props.currentCategory.slice(1)}
         </strong>
         .
       </div>

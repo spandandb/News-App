@@ -10,7 +10,7 @@ export default function NewsComponent(props) {
     articles: [],
     loading: false
   });
-  const [category, setCategory] = useState('general');
+  const [category, setCategory] = useState('breaking-news');
   const [alert, setAlert] = useState(false);
 
   const allNewsCards = newsData.articles.map((newsData) => {
@@ -18,10 +18,10 @@ export default function NewsComponent(props) {
       <NewsItem
         key={newsData.url}
         title={newsData.title}
-        imgUrl={newsData.urlToImage}
+        imgUrl={newsData.image}
         readMoreLink={newsData.url}
         description={newsData.description}
-        author={newsData.author}
+        author={newsData.source.name}
       />
     );
   });
@@ -31,8 +31,10 @@ export default function NewsComponent(props) {
       return { ...prevState, loading: true };
     });
     props.setProgress(70); // eslint-disable-next-line
-    const apiKey = `cc330dcb2b5f48749802617176b91c4d`;
-    const url = `https://newsapi.org/v2/top-headlines?country=in&category=${category}&apiKey=${apiKey}`;
+    // const apiKey = `cc330dcb2b5f48749802617176b91c4d`;
+    const apiKey = `8f6d126a4492e78d5ed3356f04920cc4`;
+    // const url = `https://newsapi.org/v2/top-headlines?country=in&category=${category}&apiKey=${apiKey}`;
+    const url = `https://gnews.io/api/v4/top-headlines?country=in&topic=${category}&lang=en&token=${apiKey}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => {
