@@ -12,6 +12,7 @@ export default function NewsComponent(props) {
   });
   const [category, setCategory] = useState('breaking-news');
   const [alert, setAlert] = useState(false);
+  const [firstLoad, setFirstLoad] = useState(true);
 
   const allNewsCards = newsData.articles.map((newsData) => {
     return (
@@ -43,8 +44,12 @@ export default function NewsComponent(props) {
     document.title = `Pocket News - ${
       category[0].toUpperCase() + category.slice(1)
     }`;
-    showAlert();
+    props.setProgress(90); // eslint-disable-next-line
+    if (!firstLoad) {
+      showAlert();
+    }
     props.setProgress(100); // eslint-disable-next-line
+    setFirstLoad(false); // eslint-disable-next-line
   }, [category]);
 
   function showAlert() {
@@ -78,7 +83,11 @@ export default function NewsComponent(props) {
 
   return (
     <>
-      {alert && <CategoryChangedAlert currentCategory={category} />}
+      {alert && (
+        <CategoryChangedAlert
+          currentCategory={category === 'breaking-news' ? 'general' : category}
+        />
+      )}
       <h1>Breaking Today</h1>
       <CategorySelector
         categoryBusiness={categoryBusiness}
