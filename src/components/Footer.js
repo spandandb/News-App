@@ -22,20 +22,25 @@ export default function Footer() {
           <div className='container text-center text-md-start mt-5'>
             <div className='row mt-3'>
               <div className='col-md-3 col-lg-4 col-xl-3 mx-auto mb-4'>
-                <h6 className='text-uppercase fw-bold'>About</h6>
+                <h6 className='text-uppercase fw-bold'>About Me</h6>
                 <hr
                   className='mb-4 mt-0 d-inline-block mx-auto'
                   style={{
-                    width: '50px',
+                    width: '68px',
                     backgroundImage:
                       'linear-gradient(to left, rgba(255,0,0,0), rgba(255,0,0,1))',
                     height: '2px'
                   }}
                 />
                 <p>
-                  This app feeds your appetite for your daily dose of news.Do
-                  connect with me if you want to team up for the creation of any
-                  others interesting project.
+                  <b>
+                    Just a Web Development aspirant who loves to make Simple and
+                    Beautiful things.
+                  </b>
+                </p>
+                <p>
+                  Do connect with me if you want to team up for the creation of
+                  any others interesting project.
                 </p>
               </div>
               <div className='col-md-2 col-lg-2 col-xl-2 mx-auto mb-4'>
