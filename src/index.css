@@ -43,6 +43,7 @@ img{
   justify-content: center;
   align-items: center;
   padding-bottom: 30px;
+  z-index:-999;
 }
 
 .card--description{
@@ -87,7 +88,6 @@ h4{
     padding: 3rem;
     gap: 2rem;
     border: 1px solid red;
-    z-index: -8;
   }
 }
 
